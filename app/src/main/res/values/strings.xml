@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">PersonalArea</string>
+
+    <string-array name="tariff_names">
+        <item>«Улыбка (бесплатные СМС)»</item>
+        <item>«Свобода (безлимитный интернет)»</item>
+        <item>«Общение (безлимитные звонки)»</item>
+    </string-array>
+
+    <string-array name="tariff_speeds">
+        <item>100</item>
+        <item>200</item>
+        <item>500</item>
+    </string-array>
+
+    <string-array name="tariff_costs">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+    </string-array>
 </resources>
