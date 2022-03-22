@@ -172,4 +172,26 @@
         app:layout_constraintLeft_toLeftOf="@id/balanceCard"
         app:layout_constraintTop_toBottomOf="@id/tariff"/>
 
+    <TextView
+        android:id="@+id/userInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Пользователь"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/balanceCard"
+        app:layout_constraintTop_toBottomOf="@id/tariffList" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userInfoList"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="#F1F1F1"
+        tools:listitem="@layout/user_info_item"
+        app:layout_constraintLeft_toLeftOf="@id/balanceCard"
+        app:layout_constraintTop_toBottomOf="@id/userInfo"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

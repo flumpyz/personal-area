@@ -10,9 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val recyclerView: RecyclerView = findViewById(R.id.tariffList)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = TariffRecyclerAdapter(getTariffList(), getSpeedsList(), getCostsList())
+        val tariffRecyclerView: RecyclerView = findViewById(R.id.tariffList)
+        tariffRecyclerView.layoutManager = LinearLayoutManager(this)
+        tariffRecyclerView.adapter = TariffRecyclerAdapter(getTariffList(), getSpeedsList(), getCostsList())
+
+        val userRecyclerView: RecyclerView = findViewById(R.id.userInfoList)
+        userRecyclerView.layoutManager = LinearLayoutManager(this)
+        userRecyclerView.adapter = UserRecyclerAdapter(getUserInfoIcons(), getUserInfo())
     }
 
     private fun getTariffList(): List<String> {
@@ -27,9 +31,11 @@ class MainActivity : AppCompatActivity() {
         return this.resources.getStringArray(R.array.tariff_costs).toList()
     }
 
-    private fun fillList(): List<String> {
-        val data = mutableListOf<String>()
-        (0..5).forEach { i -> data.add("$i element") }
-        return data
+    private fun getUserInfo(): List<String> {
+        return this.resources.getStringArray(R.array.user_info).toList()
+    }
+
+    private fun getUserInfoIcons(): List<Int> {
+        return listOf(R.drawable.user, R.drawable.home, R.drawable.dashboard)
     }
 }
