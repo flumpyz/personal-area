@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/balanceCard"
+    android:layout_width="300dp"
+    android:layout_height="97dp"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:paddingStart="20dp"
+    android:paddingTop="20dp"
+    android:paddingEnd="20dp"
+    android:gravity="center_horizontal"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/balanceImg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="money"
+        android:scaleType="centerInside"
+        android:src="@drawable/ruble"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ddd"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.121" />
+
+    <TextView
+        android:id="@+id/ddd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/balanceImg"
+        android:text="Ваш баланс"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/balanceImg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ddt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ddd"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/balanceImg"
+        android:text="ЛС: "
+        android:textColor="#696969"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@+id/balanceImg"
+        app:layout_constraintTop_toBottomOf="@+id/ddd" />
+
+    <TextView
+        android:id="@+id/personalAccountNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ddd"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/ddt"
+        android:textColor="#696969"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@+id/balanceImg"
+        app:layout_constraintTop_toBottomOf="@+id/ddd" />
+
+    <TextView
+        android:id="@+id/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="21dp"
+        android:textColor="#0000CD"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/balanceImg"
+        app:layout_constraintTop_toBottomOf="@+id/ddd" />
+
+    <TextView
+        android:id="@+id/rubleSign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="10dp"
+        android:text="₽"
+        android:textColor="#0000CD"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/balanceImg"
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
+
+    <TextView
+        android:id="@+id/toPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/balanceImg"
+        android:layout_alignStart="@+id/balanceImg"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="6dp"
+        android:text="К оплате за сентябрь: "
+        android:textColor="#696969"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/balanceImg"
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
+
+    <TextView
+        android:id="@+id/sumToPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/balanceImg"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/toPay"
+        android:textColor="#696969"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/balanceImg"
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
+
+    <TextView
+        android:id="@+id/sumToPaySign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/balanceImg"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/sumToPay"
+        android:text="₽"
+        android:textColor="#696969"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/balanceImg"
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_below="@id/rubleSign"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="0dp"
+        android:background="#00FFFFFF"
+        android:padding="0dp"
+        android:text="Пополнить"
+        android:textColor="#FF7F50"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rubleSign" />
+
+</RelativeLayout>
