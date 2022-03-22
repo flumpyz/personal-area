@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 
 class TariffRecyclerAdapter(private val names: List<String>, private val speeds: List<String>, private val costs: List<String>):
@@ -13,6 +14,7 @@ class TariffRecyclerAdapter(private val names: List<String>, private val speeds:
         val largeTextView: TextView = itemView.findViewById(R.id.textViewLarge)
         val smallTextView: TextView = itemView.findViewById(R.id.textViewSmall)
         val costTextView: TextView = itemView.findViewById(R.id.tariffCost)
+        val line: View = itemView.findViewById(R.id.line)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -26,6 +28,10 @@ class TariffRecyclerAdapter(private val names: List<String>, private val speeds:
         holder.largeTextView.text = names[position]
         holder.smallTextView.text = speeds[position]
         holder.costTextView.text = costs[position]
+
+        if (position == 0) {
+            holder.line.isVisible = false
+        }
     }
 
     override fun getItemCount(): Int {
