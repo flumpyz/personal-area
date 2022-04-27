@@ -7,8 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.example.personalarea.model.UserInfo
 
-class UserRecyclerAdapter(private val iconResources: List<Int>, private val texts: List<String>) :
+class UserRecyclerAdapter(private val userIconList: List<Int>, private val userInfoList: MutableList<String>) :
     RecyclerView.Adapter<UserRecyclerAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,8 +29,8 @@ class UserRecyclerAdapter(private val iconResources: List<Int>, private val text
     }
 
     override fun onBindViewHolder(holder: UserRecyclerAdapter.MyViewHolder, position: Int) {
-        holder.userInfoIcon.setImageResource(iconResources[position])
-        holder.userInfoText.text = texts[position]
+        holder.userInfoIcon.setImageResource(userIconList[position])
+        holder.userInfoText.text = userInfoList[position]
 
         if (position == 0) {
             holder.line.isVisible = false
@@ -37,7 +38,7 @@ class UserRecyclerAdapter(private val iconResources: List<Int>, private val text
     }
 
     override fun getItemCount(): Int {
-        return texts.size
+        return userInfoList.size
     }
 
 }

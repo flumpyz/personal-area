@@ -1,29 +1,31 @@
 package com.example.personalarea
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.LifecycleOwner
+import com.example.personalarea.databinding.PersonalAccountFragmentBinding
+import com.example.personalarea.model.DataModel
 
 
 class PersonalAccountFragment : Fragment() {
+    lateinit var binding: PersonalAccountFragmentBinding
+    private val dataModel: DataModel by activityViewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val rootView: View = inflater.inflate(R.layout.personal_account_fragment, container, false)
-        val personalAccountNumber: TextView = rootView.findViewById(R.id.personalAccountNumber)
-        val balance: TextView = rootView.findViewById(R.id.balance)
-        val sumToPay: TextView = rootView.findViewById(R.id.sumToPay)
+    @SuppressLint("SetTextI18n")
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = PersonalAccountFragmentBinding.inflate(layoutInflater)
+        dataModel.message.observe(activity as LifecycleOwner) {
+            binding.sumToPay.text = (it.nextPay ?: 0).toString()
+            binding.personalAccountNumber.text = (it.accNum ?: 0).toString()
+            binding.balance.text = (it.balance ?: 0).toString()
+        }
 
-        personalAccountNumber.text = "11010010"
-        balance.text = "100.42"
-        sumToPay.text = "0.00"
-
-        return rootView
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-    }
 }

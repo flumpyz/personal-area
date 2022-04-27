@@ -24,7 +24,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewLarge"
+        android:id="@+id/textViewName"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -75,7 +75,7 @@
         android:id="@+id/tariffSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewLarge"
+        android:layout_below="@id/textViewName"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="15dp"
         android:text="Скорость до "
@@ -85,14 +85,14 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textViewSmall"
+        android:id="@+id/textViewSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="#696969"
         android:textSize="10sp"
         android:textStyle="bold"
-        android:layout_below="@id/textViewLarge"
+        android:layout_below="@id/textViewName"
         android:layout_toRightOf="@id/tariffSpeed"/>
 
     <TextView
@@ -104,7 +104,7 @@
         android:textColor="#696969"
         android:textSize="10sp"
         android:textStyle="bold"
-        android:layout_below="@id/textViewLarge"
-        android:layout_toRightOf="@id/textViewSmall"/>
+        android:layout_below="@id/textViewName"
+        android:layout_toRightOf="@id/textViewSpeed"/>
 
 </RelativeLayout>

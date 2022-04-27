@@ -6,13 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
+import com.example.personalarea.model.Tariff
 
-class TariffRecyclerAdapter(private val names: List<String>, private val speeds: List<String>, private val costs: List<String>):
+class TariffRecyclerAdapter(private val tariffList: MutableList<Tariff>):
     RecyclerView.Adapter<TariffRecyclerAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val largeTextView: TextView = itemView.findViewById(R.id.textViewLarge)
-        val smallTextView: TextView = itemView.findViewById(R.id.textViewSmall)
+        val nameTextView: TextView = itemView.findViewById(R.id.textViewName)
+        val speedTextView: TextView = itemView.findViewById(R.id.textViewSpeed)
         val costTextView: TextView = itemView.findViewById(R.id.tariffCost)
         val line: View = itemView.findViewById(R.id.line)
     }
@@ -25,9 +26,9 @@ class TariffRecyclerAdapter(private val names: List<String>, private val speeds:
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.largeTextView.text = names[position]
-        holder.smallTextView.text = speeds[position]
-        holder.costTextView.text = costs[position]
+        holder.nameTextView.text = tariffList[position].title
+        holder.speedTextView.text = tariffList[position].speed.toString()
+        holder.costTextView.text = tariffList[position].cost.toString()
 
         if (position == 0) {
             holder.line.isVisible = false
@@ -35,6 +36,6 @@ class TariffRecyclerAdapter(private val names: List<String>, private val speeds:
     }
 
     override fun getItemCount(): Int {
-        return names.size
+        return tariffList.size
     }
 }

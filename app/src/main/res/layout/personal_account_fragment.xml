@@ -24,12 +24,12 @@
         android:src="@drawable/ruble"
         app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/ddd"
+        app:layout_constraintRight_toLeftOf="@+id/balanceTitle"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.121" />
 
     <TextView
-        android:id="@+id/ddd"
+        android:id="@+id/balanceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="21dp"
@@ -42,10 +42,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/ddt"
+        android:id="@+id/personalAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ddd"
+        android:layout_below="@id/balanceTitle"
         android:layout_marginLeft="21dp"
         android:layout_marginTop="3dp"
         android:layout_toRightOf="@+id/balanceImg"
@@ -53,20 +53,20 @@
         android:textColor="#696969"
         android:textSize="10sp"
         app:layout_constraintLeft_toRightOf="@+id/balanceImg"
-        app:layout_constraintTop_toBottomOf="@+id/ddd" />
+        app:layout_constraintTop_toBottomOf="@+id/balanceTitle" />
 
     <TextView
         android:id="@+id/personalAccountNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ddd"
+        android:layout_below="@id/balanceTitle"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="3dp"
-        android:layout_toRightOf="@+id/ddt"
+        android:layout_toRightOf="@+id/personalAccount"
         android:textColor="#696969"
         android:textSize="10sp"
         app:layout_constraintLeft_toRightOf="@+id/balanceImg"
-        app:layout_constraintTop_toBottomOf="@+id/ddd" />
+        app:layout_constraintTop_toBottomOf="@+id/balanceTitle" />
 
     <TextView
         android:id="@+id/balance"
@@ -80,7 +80,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="@+id/balanceImg"
-        app:layout_constraintTop_toBottomOf="@+id/ddd" />
+        app:layout_constraintTop_toBottomOf="@+id/balanceTitle" />
 
     <TextView
         android:id="@+id/rubleSign"
